@@ -1,32 +1,35 @@
-let cadastro = [];
-let opcao;
+let fila = []
+let opcao = ""
+
 do {
+  let pacientes = ""
+  for (let i = 0; i < fila.length; i++) {
+    pacientes += (i + 1) + "º - " + fila[i] + "\n"
+  }
+
   opcao = prompt(
-    "Digite a opção desejada: \n" +
-      "1- Novo paciente \n" +
-      "2- Consultar paciente \n" +
-      "3- Sair"
-  );
+    "Pacientes:\n" + pacientes +
+    "\nEscolha uma ação:\n1 - Novo paciente\n2 - Consultar paciente\n3 - Sair"
+  )
 
   switch (opcao) {
     case "1":
-      let novoPaciente = prompt("Digite o nome e o sobrenome do paciente: ");
-      cadastro.push(novoPaciente);
-      alert(`paciente ${novoPaciente} cadastrado com sucesso`);
-      break;
+      const novoPaciente = prompt("Qual é o nome do paciente?")
+      fila.push(novoPaciente)
+      break
     case "2":
-      let consultar = prompt("Digite o nome do paciente que deseja consular");
-      if (cadastro.includes(consultar)) {
-        alert(`Paciente ${consultar} esta na lista`);
+      const pacienteConsultado = fila.shift()
+      if (!pacienteConsultado) {
+        alert("Não há pacientes na fila!")
       } else {
-        alert(`Paciente ${consultar} não esta na lista`);
+        alert(pacienteConsultado + " foi removido da fila.")
       }
-      break;
+      break
     case "3":
-      alert("Saindo");
-      break;
+      alert("Encerrando...")
+      break
     default:
-      alert("Opção invalida tente novamente");
-      break;
+      alert("Opção inválida!")
+      break
   }
 } while (opcao !== "3");
