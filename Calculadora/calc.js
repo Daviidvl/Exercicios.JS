@@ -1,25 +1,59 @@
-let fistNumber = parseFloat(prompt("Digite o primeiro numero que quer calcular:"))
-let secondNumber = parseFloat(prompt("Digite o segundo numero que quer calcular: "))
+function soma (){
+    const primiroNumero = parseFloat(prompt("Digite o primeiro numero: "))
+    const segundoNumero = parseFloat(prompt("Digite o segundo numero: "))
+    return primiroNumero + segundoNumero
+}
 
-let calculo = prompt("Digite a opão cujo vc quer calcular \n" +
-    "\n1- Adição"+
-    "\n2- Subtração"+
-    "\n3- Multiplicação"+
-    "\n4- Divisão"
-)
-switch(calculo){
-    case "1":
-        alert(`a soma de ${fistNumber} + ${secondNumber} é: ${fistNumber + secondNumber}`)
+function sub (){
+    const primiroNumero = parseFloat(prompt("Digite o primeiro numero: "))
+    const segundoNumero = parseFloat(prompt("Digite o segundo numero: "))
+    return primiroNumero - segundoNumero
+}
+
+function multi (){
+    const primiroNumero = parseFloat(prompt("Digite o primeiro numero: "))
+    const segundoNumero = parseFloat(prompt("Digite o segundo numero: "))
+    return primiroNumero * segundoNumero
+}
+
+function divi (){
+    const primiroNumero = parseFloat(prompt("Digite o primeiro numero: "))
+    const segundoNumero = parseFloat(prompt("Digite o segundo numero: "))
+    return primiroNumero / segundoNumero
+}
+
+
+do{
+    const opcao = prompt(
+        `Escolha a opção abaixo:
+        1. Soma
+        2. Subtração
+        3. Divisão 
+        4. Multiplicação
+        5. Sair...`
+    )
+    let resultado;
+
+    switch(opcao){
+        case"1":
+        resultado = soma();
         break
-    case "2":
-        alert(`a subtração de ${fistNumber} - ${secondNumber} é: ${fistNumber - secondNumber}`)
+        case"2":
+        resultado = sub();
         break
-    case "3":
-        alert(`a multiplicação de ${fistNumber} * ${secondNumber} é: ${fistNumber * secondNumber}`)
+        case"3":
+        resultado = multi();
+        case"4":
+        resultado = divi();
         break
-    case "4":
-        alert(`a divisão de ${fistNumber} / ${secondNumber} é: ${fistNumber / secondNumber}`)
+        case"5":
+        alert("Saindo....")
         break
         default:
             alert("Opção invalida")
-}
+    }
+
+    if(resultado){
+        alert(`Resultado: ${resultado}`)
+    }
+}while(opcao !=="5")
