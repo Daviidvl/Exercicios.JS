@@ -14,4 +14,4 @@ function primo (n){
     console.log(`O número ${n} é primo`);
 }
 
-primo(6)
+primo(32)
