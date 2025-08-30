@@ -1,6 +1,6 @@
-let numero = prompt("Digite um numero abaixo: ")
-if(numero % 2 === 0){
-    alert("Esse numero é par")
-}else{
-    alert("Esse numero é impar")
+const numero = prompt(alert("Digite um número:"));
+if (numero % 2 ===0){
+    alert("o numero é par");
+} else{
+    alert("o numero é impar");
 }

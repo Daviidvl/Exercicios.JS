@@ -8,5 +8,5 @@ do {
   } else if (tentativa > numeroAleatorio) {
     alert("O numero é menor");
   }
-} while (tentativa !== numeroAleatorio); // só sai quando o numero for igual
+} while (tentativa !== numeroAleatorio);
 alert("Voce ganhou");
